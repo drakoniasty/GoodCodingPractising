@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\user\\source\\repos\\goodcodepractise\\goodcodepractise\\faktoria\\faktoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\faktoria\\faktoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\user\\source\\repos\\goodcodepractise\\goodcodepractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\user\\source\\repos\\goodcodepractise\\goodcodepractise\\zadania wyk 1 - codesmells.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\zadania wyk 1 - codesmells.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\user\\source\\repos\\goodcodepractise\\goodcodepractise\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 245,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md",
+              "RelativeDocumentMoniker": "GoodCodePractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md",
+              "RelativeToolTip": "GoodCodePractise\\zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-09T15:14:38.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "zadania wyk 1 - codesmells.md",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\zadania wyk 1 - codesmells.md",
+              "RelativeDocumentMoniker": "GoodCodePractise\\zadania wyk 1 - codesmells.md",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\zadania wyk 1 - codesmells.md",
+              "RelativeToolTip": "GoodCodePractise\\zadania wyk 1 - codesmells.md",
+              "ViewState": "AgIAAO8CAAAAAAAAAAAcwAkDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-09T14:44:21.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Faktoria.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\Faktoria\\Faktoria.cs",
+              "RelativeDocumentMoniker": "GoodCodePractise\\Faktoria\\Faktoria.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\Faktoria\\Faktoria.cs",
+              "RelativeToolTip": "GoodCodePractise\\Faktoria\\Faktoria.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:35:53.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\Program.cs",
+              "RelativeDocumentMoniker": "GoodCodePractise\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\GoodCodePractise\\GoodCodePractise\\Program.cs",
+              "RelativeToolTip": "GoodCodePractise\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T13:35:22.811Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
