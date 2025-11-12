@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GoodCodePractise</id>
+    <version>1.0.0</version>
+    <authors>GoodCodePractise</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="a29abdfe5c69fc4a226846db86801e3e56e785ad" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\bin\Debug\net8.0\GoodCodePractise.runtimeconfig.json" target="lib\net8.0\GoodCodePractise.runtimeconfig.json" />
+    <file src="C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\bin\Debug\net8.0\GoodCodePractise.dll" target="lib\net8.0\GoodCodePractise.dll" />
+  </files>
+</package>

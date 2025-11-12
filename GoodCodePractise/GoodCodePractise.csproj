@@ -11,8 +11,4 @@
     <None Remove="zadania wyk 1 - codesmells.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Singleton\" />
-  </ItemGroup>
-
 </Project>

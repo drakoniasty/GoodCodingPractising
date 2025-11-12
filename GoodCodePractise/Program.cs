@@ -1,4 +1,5 @@
 ﻿using GoodCodePractise.Faktoria;
+using GoodCodePractise.Singleton;
 
 internal partial class Program
 {
@@ -29,7 +30,12 @@ internal partial class Program
                     },
 
             ];
-
+        Console.WriteLine("Zadanie #1");
+        Console.WriteLine("wywołanie nr 1");
+        Console.WriteLine(Vault.Instance);
+        Console.WriteLine("wywołanie nr 2");
+        Console.WriteLine(Vault.Instance);
+        Console.WriteLine("Zadanie #2");
         List<IWojownik> obiekty = new List<IWojownik>();
         foreach (var item in obiekty_zewnetrzne)
         {
