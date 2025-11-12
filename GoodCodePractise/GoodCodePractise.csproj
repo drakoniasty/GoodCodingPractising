@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="zadania wyk 2,3 - singleton, faktoria, builder, prototyp.md" />
-    <Compile Include="zadania wyk 1 - codesmells.md" />
+    <None Remove="zadania wyk 1 - codesmells.md" />
   </ItemGroup>
 
   <ItemGroup>

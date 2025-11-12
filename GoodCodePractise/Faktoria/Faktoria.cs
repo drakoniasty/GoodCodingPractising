@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,32 +17,11 @@ using System.Threading.Tasks;
 
 namespace GoodCodePractise.Faktoria
 {
-    class Garnizon
+    public interface IWojownik
     {
-        public Garnizon(List<Dictionary<string, string>> lista)
-        {
-            
-            foreach (var wojownik in lista)
-            {
-                if(wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
-                {
-
-                }
-                else if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga")){
-
-                }
-                else if (wojownik.ContainsKey("predkosc_poruszania") && wojownik.ContainsKey("gieremek"))
-                {
-
-                }
-                else
-                {
-                    throw new Exception("Nie mamy takiego wojownika w garnizonie");
-                }
-            }
-            
-        }
+        public void KimJestes();
     }
+   
     class Wojownik
     {
         private string imie = "";
@@ -87,6 +67,7 @@ namespace GoodCodePractise.Faktoria
                 //this.wiek = value;
             } 
         }
+       
         public Wojownik(string imie, string wiek)
         {
             this.Imie = imie;
@@ -95,42 +76,47 @@ namespace GoodCodePractise.Faktoria
         }
     }
    
-    class Strzelec: Wojownik
+    class Strzelec: Wojownik, IWojownik
     {
         private int dystans_ataku = 14;
-        public int DystansAtaku
+        public string DystansAtaku
         {
             get
             {
-                return this.dystans_ataku;
+                return (this.dystans_ataku).ToString();
             }
 
             set
             {
-                if (value >= 0)
+                var wartosc = Convert.ToInt32(value);
+                if (wartosc >= 0)
                 {
-                    this.dystans_ataku = value;
+                    this.dystans_ataku = wartosc;
                 }
             }
         }
-        private double czestotliwosc_na_min = 0.3;
-        public double CzestotliwoscNaMin
+        private int czestotliwosc_na_min = 1;
+        public string CzestotliwoscNaMin
         {
             get
             {
-                return this.czestotliwosc_na_min;
+                return (this.czestotliwosc_na_min).ToString();
             }
 
             set
             {
-                if (value >= 0)
+               var wartosc = Convert.ToInt32(value);
+                if (wartosc >= 0)
                 {
-                    this.czestotliwosc_na_min = value;
+                    this.czestotliwosc_na_min = wartosc;
                 }
             }
         }
-
-        public Strzelec(string imie, string wiek, int dystans_ataku, double czestotliwosc_na_min):base(imie, wiek)
+        public void KimJestes()
+        {
+            Console.WriteLine("Jesteś Strzelcem!");
+        }
+        public Strzelec(string imie, string wiek, string dystans_ataku, string czestotliwosc_na_min):base(imie, wiek)
         {
             DystansAtaku = dystans_ataku;
             CzestotliwoscNaMin = czestotliwosc_na_min;
@@ -138,107 +124,127 @@ namespace GoodCodePractise.Faktoria
     }
 
 
-    class Piechur : Wojownik
+    class Piechur : Wojownik, IWojownik
     {
         private bool bron_dluga;
-        public bool BronDluga{ 
+        public string BronDluga{ 
             get{
-                return this.bron_dluga;
+                return( this.bron_dluga).ToString();
             }
             set{
-                this.BronDluga = value;
+                var wartosc = Convert.ToBoolean(value);
+                this.bron_dluga = wartosc;
                 }
         }
         private bool bron_krotka;
-        public bool BronKrotka {
+        public string BronKrotka {
             get
             {
-                return this.bron_krotka;
+                return (this.bron_krotka).ToString();
             }
             set
             {
-                this.bron_krotka = value;
+                this.bron_krotka = Convert.ToBoolean(value);
             }
         }
         private bool tarcza;
-        public bool Tarcza { get; set; }
-        public Piechur(string imie, int wiek, bool tarcza, bool bron_dluga, bool bron_krotka):base(imie, wiek)
+        public string Tarcza
+        {
+            get
+            {
+                return (this.tarcza).ToString();
+            }
+            set
+            {
+                var wartosc = Convert.ToBoolean(value);
+                this.tarcza = wartosc;
+            }
+        }
+        public void KimJestes()
+        {
+            Console.WriteLine("Jesteś piechurem!");
+        }
+        public Piechur(string imie, string wiek, string tarcza, string bron_dluga, string bron_krotka):base(imie, wiek)
         {
             this.Tarcza = tarcza;
             this.BronDluga = bron_dluga;
             this.BronKrotka = bron_krotka;
         }
     }
-    class Konny : Wojownik
+    class Konny : Wojownik, IWojownik
     {
         private double predkosc_poruszania = 1.2;
-        public double PredkoscPoruszania
+        public string PredkoscPoruszania
         {
             get
             {
-                return this.predkosc_poruszania;
+                return (this.predkosc_poruszania).ToString();
             }
             set
             {
-                if (value > 0)
+                var wartosc = Convert.ToDouble(value);
+                if (wartosc > 0)
                 {
-                    this.predkosc_poruszania = value;
+                    this.predkosc_poruszania = wartosc;
                 }
             }
         }
         private bool gieremek = true;
-        public bool Gieremek
+        public string Gieremek
         {
             get
             {
-                return this.gieremek;
+
+                return (this.gieremek).ToString();
             }
             set
             {
-                this.gieremek = value;
+                this.gieremek = Convert.ToBoolean(value);
             }
         }
+        public void KimJestes()
+        {
+            Console.WriteLine("Jesteś konnicą!");
+        }
 
-        public Konny(string imie, string wiek, double predkosc, bool gieremek):base(imie, wiek)
+        public Konny(string imie, string wiek, string gieremek, string predkosc) :base(imie, wiek)
         {
             this.Gieremek = gieremek;
             this.PredkoscPoruszania = predkosc;
         }
 
     }
-  //Strzelec, Konny
-
-
-    internal class Faktoria
+    public static class Garnizon
     {
+        public static IWojownik CreateWojownik(Dictionary<string, string> wojownik )
+        {
+            //foreach (var wojownik in woj)
+            //{
+                if (wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
+                {
+                    Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
+                    return o;
 
+                }
+                else if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga"))
+                {
+                    Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
+                    return p;
+            }
+                else if (wojownik.ContainsKey("PredkoscPoruszania") && wojownik.ContainsKey("gieremek"))
+                {
+                    Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                    return k;
+            }
+                else
+                {
+                    Console.WriteLine(wojownik);                
+                    throw new Exception("Nie mamy takiego wojownika w garnizonie");
+                }
+            //}
 
-        List<Dictionary<string, string>> obiekty_zewnetrzne = [
-                    new Dictionary<string, string>{
-                        { "imie", "Jan MęczyBuła" },
-                        { "wiek", "34" },
-                        { "dystans", "5" },
-                        { "czestotliwosc", "0.34" },
-                        
-                    },
-                    new Dictionary<string, string>{
-                        { "imie", "Sara" },
-                        { "wiek", "21" },
-                        { "tarcza", "true" },
-                        { "bron_dluga", "false" },
-                        { "bron_krotka", "true" },
-                    },
-                    new Dictionary<string, string>{
-                        { "imie", "Krzysztof" },
-                        { "wiek", "25" },
-                        { "wiek", "25" },
-                        { "wiek", "25" },
-                        { "wiek", "25" },
-                    },
-                  
-            ];
-
-
-
+        }
     }
+    //Strzelec, Konny
+
 }
