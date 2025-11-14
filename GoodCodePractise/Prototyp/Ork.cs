@@ -13,8 +13,33 @@ namespace GoodCodePractise.Prototyp
         private string familyName;
         public string FamilyName { get; set; }
         private int strenght;
-        public int Strenght { get; set; }
+        public string Strenght
+        {
+            get
+            {
+                return (this.strenght).ToString();
+            }
+            set
+            {
+                try
+                {
+                    this.strenght = Convert.ToInt32(value);
+                }
+                catch 
+                {
+                    throw new Exception("Musi to być liczba całkowita");
+                }
+            }
+        }
+
         private string weapon;
         public string Weapon { get; set; }
+        public Ork(string name, string familyname, string strenght, string weapon)
+        {
+            this.Name = name;
+            this.FamilyName = familyname;
+            this.Strenght = strenght;
+            this.Weapon = weapon;
+        }
     }
 }

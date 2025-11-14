@@ -1,5 +1,8 @@
 ﻿using GoodCodePractise.Faktoria;
+using GoodCodePractise.Prototyp;
 using GoodCodePractise.Singleton;
+using Newtonsoft.Json;
+using System.Text.Json.Nodes;
 
 internal partial class Program
 {
@@ -46,6 +49,55 @@ internal partial class Program
         {
             item.KimJestes();
         }
+        Console.WriteLine("Zadanie #3");
+        Ork ork = new Ork("Orkan", "Orkanowski", "3", "Miecz");
+        string serializacja = JsonConvert.SerializeObject(ork);
+        Dictionary<string, string> prototyp = new Dictionary<string, string>();
+        prototyp = JsonConvert.DeserializeObject<Dictionary<string, string>>(serializacja);
+        //Dictionary<string, string> prototyp = new Dictionary<string, string>();
+
+        //Console.WriteLine("Twój zaserializowany obiekt");
+        //Console.WriteLine(serializacja);
+        //serializacja = serializacja.Remove(0,1);
+        //serializacja = serializacja.Remove(serializacja.Length-1);
+        //Console.WriteLine("Usunięte znaki");
+        //Console.WriteLine(serializacja);
+        //string[] stringi = serializacja.Split(',');
+        //foreach (var item in stringi)
+        //{
+        //    Console.WriteLine("Teraz szykuję się do słownika");
+        //    Console.WriteLine(item);
+        //    string klucz = item.Split(":")[0];
+        //    string wartosc = item.Split(":")[1];
+        //    klucz = klucz.Replace('"', '\0');
+        //    klucz = klucz.Replace(',', '\0');
+        //    //wartosc = wartosc.Replace('"', '\0');
+        //    Console.WriteLine(klucz);
+        //    Console.WriteLine(wartosc);
+        //    prototyp.Add(klucz, wartosc);
+        //}
+        //Console.WriteLine("Twoj prototyp w formie słownika");
+        //Console.WriteLine(prototyp);
+        //foreach (var kvp in prototyp)
+        //    { Console.WriteLine("Klucz: |{0}|  Wartość: |{1}|", kvp.Key, kvp.Value); }
+        List<Ork> orkowie = new List<Ork>();
+        Console.WriteLine("Zmieniam parametr siła na losowe wartości");
+        Console.WriteLine("Tworzę 5 kolejnych orków za pomocą serializacji i prototypu");
+        Random random = new Random();
+        for (int i = 0; i < 5; i++) 
+        {
+            
+            Console.WriteLine("Krok nr " + i.ToString());
+            //Console.WriteLine(prototyp["name"]);
+
+            foreach (var item in prototyp.Keys) { Console.WriteLine(item); }
+            prototyp["Strenght"] = random.Next(0,100).ToString();
+
+            orkowie.Add(new Ork(prototyp["Name"], prototyp["FamilyName"], prototyp["Strenght"], prototyp["Weapon"]));
+        }
+        Console.WriteLine("Oto lista Twoich orków: ");
+        foreach (var item in orkowie) { Console.WriteLine(item.Strenght); }
+
     }
 }
 

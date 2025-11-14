@@ -13,3 +13,6 @@ C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug
 C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug\net8.0\GoodCodePractise.pdb
 C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug\net8.0\GoodCodePractise.genruntimeconfig.cache
 C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug\net8.0\ref\GoodCodePractise.dll
+C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug\net8.0\GoodCodePractise.csproj.AssemblyReference.cache
+C:\Users\Konrad\Documents\GitHub\GoodCodingPractising\GoodCodePractise\obj\Debug\net8.0\GoodCode.50762626.Up2Date
