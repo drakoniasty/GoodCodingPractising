@@ -87,7 +87,7 @@ internal partial class Program
         for (int i = 0; i < 5; i++) 
         {
             
-            Console.WriteLine("Krok nr " + i.ToString());
+            //Console.WriteLine("Krok nr " + i.ToString());
             //Console.WriteLine(prototyp["name"]);
 
             foreach (var item in prototyp.Keys) { Console.WriteLine(item); }

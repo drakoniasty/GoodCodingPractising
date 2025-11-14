@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoodCodePractise.Builder;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
@@ -222,18 +223,21 @@ namespace GoodCodePractise.Faktoria
             //{
                 if (wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
                 {
-                    Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
+                //Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
+                    Strzelec o = new StrzelecBuilder.StworzWoja(wojownik);
                     return o;
 
                 }
                 else if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga"))
                 {
-                    Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
+                    //Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
+                    Piechur p = new PiechurBuilder.StworzWoja(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
                     return p;
             }
                 else if (wojownik.ContainsKey("PredkoscPoruszania") && wojownik.ContainsKey("gieremek"))
                 {
-                    Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                    //Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                    Konny k = new KonnyBuilder.StworzWoja(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
                     return k;
             }
                 else
