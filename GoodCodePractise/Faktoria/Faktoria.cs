@@ -21,6 +21,7 @@ namespace GoodCodePractise.Faktoria
     public interface IWojownik
     {
         public void KimJestes();
+        public string Bron { get; set; }
     }
    
     class Wojownik
@@ -68,7 +69,7 @@ namespace GoodCodePractise.Faktoria
                 //this.wiek = value;
             } 
         }
-       
+        public string Bron { get; set; }
         public Wojownik(string imie, string wiek)
         {
             this.Imie = imie;
@@ -221,34 +222,103 @@ namespace GoodCodePractise.Faktoria
         {
             //foreach (var wojownik in woj)
             //{
-                if (wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
-                {
-                //Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
-                    Strzelec o = new StrzelecBuilder.StworzWoja(wojownik);
-                    return o;
+            if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga"))
+            {
+                Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
+                return p;
+            }
+            else if (wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
+            {
+                Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
+                return o;
+                //Strzelec o = new StrzelecBuilder.StworzWoja(wojownik);
+                //StrzelecBuilder strzelec = new StrzelecBuilder();
+                //strzelec.Krok1(wojownik);
+                //strzelec.Krok2();
+                //strzelec.Krok3();
+                //Armia.Add(strzelec.Wojownik);
 
-                }
-                else if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga"))
-                {
-                    //Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
-                    Piechur p = new PiechurBuilder.StworzWoja(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
-                    return p;
             }
-                else if (wojownik.ContainsKey("PredkoscPoruszania") && wojownik.ContainsKey("gieremek"))
-                {
-                    //Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
-                    Konny k = new KonnyBuilder.StworzWoja(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
-                    return k;
+                
+            else if (wojownik.ContainsKey("PredkoscPoruszania") && wojownik.ContainsKey("gieremek"))
+            {
+                Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                //Konny k = new KonnyBuilder.StworzWoja(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                return k;
             }
-                else
-                {
-                    Console.WriteLine(wojownik);                
-                    throw new Exception("Nie mamy takiego wojownika w garnizonie");
-                }
+            else
+            {
+                Console.WriteLine(wojownik);                
+                throw new Exception("Nie mamy takiego wojownika w garnizonie");
+            }
             //}
 
         }
     }
-    //Strzelec, Konny
+    public static class NowyGarnizon
+    {
+        public static List<IWojownik> CreateWojownik(Dictionary<string, string> wojownik )
+        {
+            List<IWojownik> Armia = new List<IWojownik>();
+
+            //foreach (var wojownik in woj)
+            //{
+            if (wojownik.ContainsKey("tarcza") && wojownik.ContainsKey("bron_krotka") && wojownik.ContainsKey("bron_dluga"))
+            {
+                //Piechur p = new Piechur(wojownik["imie"], wojownik["wiek"], wojownik["tarcza"], wojownik["bron_krotka"], wojownik["bron_dluga"]);
+                PiechurBuilder piechur = new PiechurBuilder();
+                piechur.Krok1(wojownik);
+                piechur.Krok2();
+                piechur.Krok3();
+                Armia.Add(piechur.Wojownik);
+                PiechurBuilder piechur2 = new PiechurBuilder();
+                piechur2.Krok1(wojownik);
+                piechur2.Krok2();
+                piechur2.Krok3();
+                Armia.Add(piechur2.Wojownik);
+                return Armia;
+            }
+            else if (wojownik.ContainsKey("dystans") && wojownik.ContainsKey("czestotliwosc"))
+            {
+                //Strzelec o = new Strzelec(wojownik["imie"], wojownik["wiek"], wojownik["dystans"], wojownik["czestotliwosc"]);
+                //Strzelec o = new StrzelecBuilder.StworzWoja(wojownik);
+                StrzelecBuilder strzelec = new StrzelecBuilder();
+                strzelec.Krok1(wojownik);
+                strzelec.Krok2();
+                strzelec.Krok3();
+                Armia.Add(strzelec.Wojownik);
+                StrzelecBuilder strzelec2 = new StrzelecBuilder();
+                strzelec2.Krok1(wojownik);
+                strzelec2.Krok2();
+                strzelec2.Krok3();
+                Armia.Add(strzelec2.Wojownik);
+                return Armia;
+            }
+                
+            else if (wojownik.ContainsKey("PredkoscPoruszania") && wojownik.ContainsKey("gieremek"))
+            {
+                //Konny k = new Konny(wojownik["imie"], wojownik["wiek"], wojownik["gieremek"], wojownik["PredkoscPoruszania"]);
+                KonnyBuilder konny = new KonnyBuilder();
+                konny.Krok1(wojownik);
+                konny.Krok2();
+                konny.Krok3();
+                Armia.Add(konny.Wojownik);
+                KonnyBuilder konny2 = new KonnyBuilder();
+                konny2.Krok1(wojownik);
+                konny2.Krok2();
+                konny2.Krok3();
+                Armia.Add(konny2.Wojownik);
+                return Armia;
+            }
+            else
+            {
+                Console.WriteLine(wojownik);                
+                throw new Exception("Nie mamy takiego wojownika w garnizonie");
+            }
+            //}
+
+        }
+    }
+
 
 }

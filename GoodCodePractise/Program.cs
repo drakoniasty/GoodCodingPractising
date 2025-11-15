@@ -33,12 +33,12 @@ internal partial class Program
                     },
 
             ];
-        Console.WriteLine("Zadanie #1");
+        Console.WriteLine("Zadanie #1 Singleton");
         Console.WriteLine("wywołanie nr 1");
         Console.WriteLine(Vault.Instance);
         Console.WriteLine("wywołanie nr 2");
         Console.WriteLine(Vault.Instance);
-        Console.WriteLine("Zadanie #2");
+        Console.WriteLine("Zadanie #2 Fabryka");
         List<IWojownik> obiekty = new List<IWojownik>();
         foreach (var item in obiekty_zewnetrzne)
         {
@@ -49,7 +49,7 @@ internal partial class Program
         {
             item.KimJestes();
         }
-        Console.WriteLine("Zadanie #3");
+        Console.WriteLine("Zadanie #3 Prototyp");
         Ork ork = new Ork("Orkan", "Orkanowski", "3", "Miecz");
         string serializacja = JsonConvert.SerializeObject(ork);
         Dictionary<string, string> prototyp = new Dictionary<string, string>();
@@ -97,8 +97,17 @@ internal partial class Program
         }
         Console.WriteLine("Oto lista Twoich orków: ");
         foreach (var item in orkowie) { Console.WriteLine(item.Strenght); }
-
-    }
+        Console.WriteLine("Zadanie #4 Builder");
+        List<IWojownik> armia = new List<IWojownik>();
+        foreach (var item in obiekty_zewnetrzne)
+        {
+            armia.AddRange(NowyGarnizon.CreateWojownik(item));
+        }
+        foreach (var item in armia)
+        {
+            item.KimJestes();
+        }
+    }   
 }
 
 
