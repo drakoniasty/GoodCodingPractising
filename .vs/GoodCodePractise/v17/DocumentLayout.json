@@ -33,7 +33,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 431,
+          "DockedWidth": 253,
           "SelectedChildIndex": 7,
           "Children": [
             {
@@ -70,9 +70,9 @@
               "Title": "Fasada.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Fasada\\Fasada.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Fasada\\Fasada.cs",
-              "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Fasada\\Fasada.cs",
-              "RelativeToolTip": "GoodCodePractise\\Fasada\\Fasada.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAACQAAAA",
+              "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Fasada\\Fasada.cs*",
+              "RelativeToolTip": "GoodCodePractise\\Fasada\\Fasada.cs*",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAQwKQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-15T12:35:43.053Z",
               "EditorCaption": ""
@@ -87,8 +87,7 @@
               "RelativeToolTip": "GoodCodePractise\\Singleton\\Vault.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAA6wA8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T21:40:21.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T21:40:21.068Z"
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "GoodCodePractise\\Faktoria\\Faktoria.cs",
               "ViewState": "AQIAAEABAAAAAAAAAAAYwDYBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T13:35:53.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T13:35:53.215Z"
             },
             {
               "$type": "Document",
@@ -118,7 +116,7 @@
           ]
         },
         {
-          "DockedWidth": 59,
+          "DockedWidth": 237,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -129,7 +127,7 @@
               "RelativeDocumentMoniker": "GoodCodePractise\\Program.cs",
               "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Program.cs",
               "RelativeToolTip": "GoodCodePractise\\Program.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAgwHEAAAAIAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAAAFEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T13:35:22.811Z",
               "EditorCaption": ""

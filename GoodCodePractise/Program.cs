@@ -109,8 +109,9 @@ internal partial class Program
             item.KimJestes();
         }
         Fasada fasada = new Fasada();
-        ApiWeather api = new ApiWeather();
-        await api.callAsync();
+        await fasada.Pogoda();
+        //ApiWeather api = new ApiWeather(fasada.Odpowiedz);
+        //await api.callAsync();
     }   
 }
 

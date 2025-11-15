@@ -10,17 +10,36 @@ using System.Threading.Tasks;
 
 namespace GoodCodePractise.Fasada
 {
-    class ApiWeather
+   public class ApiWeather
     {
-        //private string url = "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}";
         private string lat = "52.256776";
         private string lon = "21.004980";
         //52.256776, 21.004980
         private string part = "current";
         private string klucz = "668b67f533481767bf6b8481bc07673b";
-        private string url = "https://api.openweathermap.org/data/2.5/onecall?lat=52.256776&lon=21.004980&appid=f21b2daf118b393bc714b36d46256a6a";
+        public string URL
+        {
+            get
+            {
+                return "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+klucz;
+            }
+            set
+            {
+                if (value == "1")
+                {
+                    lat = "52.256776";
+                    lon = "21.004980";
+                }
+                else if (value == "2")
+                {
+                    lat = "50.049683";
+                    lon = "19.944544";
+                }
+            }
+        }
 
-        public async Task callAsync()
+
+        public async Task<JObject> callAsync()
         {
 
             try
@@ -29,7 +48,7 @@ namespace GoodCodePractise.Fasada
                 using (HttpClient clients = new HttpClient())
                 {
                     
-                    using (HttpResponseMessage res = await clients.GetAsync(url))
+                    using (HttpResponseMessage res = await clients.GetAsync(URL))
                     {
                         
                         using (HttpContent zawartosc = res.Content)
@@ -42,13 +61,15 @@ namespace GoodCodePractise.Fasada
                                 
                                 var dataObj = JObject.Parse(data);
                                 
-                                Console.WriteLine("Twoja odpowiedź z api");
-                                Console.WriteLine(dataObj);
+                                //Console.WriteLine("Twoja odpowiedź z api");
+                                //Console.WriteLine(dataObj);
+                                return dataObj; 
                             }
                             else
                             {
                                 //If data is null log it into console.
-                                Console.WriteLine("Data is null!");
+                                //Console.WriteLine("Data is null!");
+                                return null;
                             }
                         }
                     }
@@ -58,6 +79,7 @@ namespace GoodCodePractise.Fasada
             catch (Exception exception)
             {
                 Console.WriteLine(exception);
+                return null;
             }
 
 
@@ -102,20 +124,57 @@ namespace GoodCodePractise.Fasada
             //var jsonResponse = await response.Content.ReadAsStringAsync();
             //Console.WriteLine($"{jsonResponse}\n");
         }
-        public ApiWeather() { }
-    }
-    public class Fasada
-    {
-        
-       public  Fasada()
+        public ApiWeather(string miasto) 
         {
-            Console.WriteLine("Co chcesz zrobić?");
-            Console.WriteLine("#1 ");
-            Console.WriteLine("#2 ");
-            Console.WriteLine("#3 ");
-            Console.WriteLine("#4 ");
-            Console.WriteLine("#5 ");
-            
+            this.URL = miasto;
+        }
+    }
+    public  class Fasada
+    {
+        //public static async Task<Fasada> Create()
+        //{
+        //    var myClass = new Fasada();
+        //    await myClass.Initialize();
+        //    return myClass;
+        //}
+        public string Odpowiedz { get; set; }
+        public ApiWeather API { get; set; }
+        
+        private Dictionary<string, string> miasta = new Dictionary<string, string>()
+        {
+            {"1" , "Warszawa" },
+            {"2" , "Kraków" },
+        };
+        public  Fasada()
+        {
+            Console.WriteLine("Dla jakiego miasta chcesz zobaczyć pogodę?");
+            foreach (var kvp in miasta)
+            {
+                Console.WriteLine("#{0} - {1}", kvp.Key, kvp.Value); 
+            }
+            this.Odpowiedz= Console.ReadLine();
+            API = new ApiWeather(Odpowiedz);
+        }
+        public async Task Pogoda()
+        {
+            var odp = await API.callAsync();
+            //Console.WriteLine("Twoja odpowiedź w fasadzie");
+            //Console.WriteLine(odp);
+            if (odp != null) 
+            {
+                Console.WriteLine("Pogoda w mieście " + miasta[Odpowiedz]);
+                Console.Write("Temperatura: ");
+                Console.WriteLine(odp["main"]["temp"]);
+                Console.WriteLine("Farenheita");
+                Console.Write("Pogoda: ");
+                Console.WriteLine(odp["weather"][0]["main"]);
+                Console.Write("Szczegóły: ");
+                Console.WriteLine(odp["weather"][0]["description"]);
+            }
+            else
+            {
+                Console.WriteLine("BRAK INTERNETU!!!");
+            }
         }
     }
 }
