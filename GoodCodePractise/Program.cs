@@ -1,4 +1,5 @@
 ﻿using GoodCodePractise.Faktoria;
+using GoodCodePractise.Fasada;
 using GoodCodePractise.Prototyp;
 using GoodCodePractise.Singleton;
 using Newtonsoft.Json;
@@ -6,7 +7,7 @@ using System.Text.Json.Nodes;
 
 internal partial class Program
 {
-    private static void Main(string[] args)
+    private static async Task Main(string[] args)
     {
         Console.WriteLine("Rozpoczynam program");
 
@@ -107,6 +108,9 @@ internal partial class Program
         {
             item.KimJestes();
         }
+        Fasada fasada = new Fasada();
+        ApiWeather api = new ApiWeather();
+        await api.callAsync();
     }   
 }
 
