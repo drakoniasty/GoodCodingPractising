@@ -1,6 +1,7 @@
 ﻿using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
 using GoodCodePractise.Prototyp;
+using GoodCodePractise.Proxy;
 using GoodCodePractise.Singleton;
 using Newtonsoft.Json;
 using System.Text.Json.Nodes;
@@ -50,7 +51,7 @@ internal partial class Program
         {
             item.KimJestes();
         }
-        Console.WriteLine("Zadanie #3 Prototyp");
+        Console.WriteLine("Zadanie #4 Prototyp");
         Ork ork = new Ork("Orkan", "Orkanowski", "3", "Miecz");
         string serializacja = JsonConvert.SerializeObject(ork);
         Dictionary<string, string> prototyp = new Dictionary<string, string>();
@@ -98,7 +99,7 @@ internal partial class Program
         }
         Console.WriteLine("Oto lista Twoich orków: ");
         foreach (var item in orkowie) { Console.WriteLine(item.Strenght); }
-        Console.WriteLine("Zadanie #4 Builder");
+        Console.WriteLine("Zadanie #3 Builder");
         List<IWojownik> armia = new List<IWojownik>();
         foreach (var item in obiekty_zewnetrzne)
         {
@@ -108,10 +109,16 @@ internal partial class Program
         {
             item.KimJestes();
         }
+        Console.WriteLine("Zadanie #5 Fasada");
         Fasada fasada = new Fasada();
         await fasada.Pogoda();
         //ApiWeather api = new ApiWeather(fasada.Odpowiedz);
         //await api.callAsync();
+        Console.WriteLine("Zadanie #6 Proxy ");
+        ServerProxy objekcik = new ServerProxy();
+        objekcik.RefreshDane();
+        objekcik.DaneOsoby();
+        Dictionary<string,string> osoba = objekcik.GetDaneOsoby();
     }   
 }
 
