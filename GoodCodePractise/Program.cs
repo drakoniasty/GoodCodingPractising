@@ -1,4 +1,5 @@
-﻿using GoodCodePractise.Faktoria;
+﻿using GoodCodePractise.Adapter;
+using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
 using GoodCodePractise.Prototyp;
 using GoodCodePractise.Proxy;
@@ -118,8 +119,20 @@ internal partial class Program
         ServerProxy objekcik = new ServerProxy();
         objekcik.RefreshDane();
         objekcik.DaneOsoby();
-        Dictionary<string,string> osoba = objekcik.GetDaneOsoby();
-    }   
+        Dictionary<string, string> osoba = objekcik.GetDaneOsoby();
+        Console.WriteLine("Zadanie #7 Adapter");
+        WeahterAdapter adapter = new WeahterAdapter();
+
+        Dictionary <string, string> pogodawwa = await adapter.RefreshDane();
+        Console.WriteLine("Ze zmiennej w funkcji głównej");
+        Console.WriteLine(pogodawwa);
+        foreach (KeyValuePair<string, string> para in pogodawwa)
+        {
+            Console.WriteLine($"\"{para.Key}\" : \"{para.Value}\"");
+
+        }
+
+    }
 }
 
 
