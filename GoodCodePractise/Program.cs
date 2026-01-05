@@ -1,4 +1,5 @@
 ﻿using GoodCodePractise.Adapter;
+using GoodCodePractise.Bridge;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
 using GoodCodePractise.Prototyp;
@@ -121,7 +122,7 @@ internal partial class Program
         objekcik.DaneOsoby();
         Dictionary<string, string> osoba = objekcik.GetDaneOsoby();
         Console.WriteLine("Zadanie #7 Adapter");
-        WeahterAdapter adapter = new WeahterAdapter();
+        WeahterAdapter adapter = new WeahterAdapter("Kraków");
 
         Dictionary <string, string> pogodawwa = await adapter.RefreshDane();
         Console.WriteLine("Ze zmiennej w funkcji głównej");
@@ -131,8 +132,22 @@ internal partial class Program
             Console.WriteLine($"\"{para.Key}\" : \"{para.Value}\"");
 
         }
+        Console.WriteLine("Zadanie #8 - Bridge ");
+        //Pogodynka pogodynka = new PogodaPrzyklad();
+        //pogodynka.pogoda = new PogodaMiasto();
+        //pogodynka.DajPogode();
+        //pogodynka.pogoda = new PogodaMiastoCzas();
+        //pogodynka.DajPogode();
+        //pogodynka.DajPogode();
+        // Pompa + baza
+        TerapiaInsulinowa terapia1 =
+            new Baza(new PompaInsulinowa());
+        terapia1.Podaj();
 
-
+        // Strzykawka + bolus
+        TerapiaInsulinowa terapia2 =
+            new Bolus(new Strzykawka());
+        terapia2.Podaj();
     }
 }
 

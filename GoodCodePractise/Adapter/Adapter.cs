@@ -42,7 +42,7 @@ namespace GoodCodePractise.Adapter
                 }
                 else
                 {
-                    throw new WarningException("Takie miasto nie jest zaimplementowane ze współrzędnymi!");
+                    //throw new WarningException("Takie miasto nie jest zaimplementowane ze współrzędnymi!");
                     __miasto = 0;
                 }
             }
