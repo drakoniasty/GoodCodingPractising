@@ -158,6 +158,7 @@ internal partial class Program
         kucharz.ZmienSposobGotowania(new Gotowanie());
         kucharz.PrzygotujDanie("makaron");
 
+        Console.WriteLine("Zadanie #14  Observer");
         AktywnyPodatek podatki = new AktywnyPodatek(0.82f);
         podatki.Dodaj(new NowyPodatek("VAT", 0.24f));
         podatki.Dodaj(new NowyPodatek("ZUS", 0.18f));
