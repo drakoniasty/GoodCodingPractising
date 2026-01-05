@@ -1,6 +1,7 @@
 ﻿using GoodCodePractise.Fasada;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace GoodCodePractise.Adapter
                 }
                 else
                 {
+                    throw new WarningException("Takie miasto nie jest zaimplementowane ze współrzędnymi!");
                     __miasto = 0;
                 }
             }
@@ -71,6 +73,11 @@ namespace GoodCodePractise.Adapter
                 __pogodynka.Add("widocznosc", value["visibility"].ToString());
                 __pogodynka.Add("wiatr_predkosc", value["wind"]["speed"].ToString());
             }
+        }
+        public WeahterAdapter(string miasto)
+        {
+
+            this.Miasto = miasto;
         }
         public Dictionary<string, string> GetDane()
         {
