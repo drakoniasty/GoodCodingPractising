@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoodCodePractise")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92b7f6a260717a5411adc6d519c9cb39b803b1d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05932793d99b221d948e8651fc8c3a457652868c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoodCodePractise")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoodCodePractise")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

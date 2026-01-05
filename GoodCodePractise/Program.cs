@@ -2,6 +2,7 @@
 using GoodCodePractise.Bridge;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
+using GoodCodePractise.Observer;
 using GoodCodePractise.Prototyp;
 using GoodCodePractise.Proxy;
 using GoodCodePractise.Singleton;
@@ -156,6 +157,19 @@ internal partial class Program
 
         kucharz.ZmienSposobGotowania(new Gotowanie());
         kucharz.PrzygotujDanie("makaron");
+
+        AktywnyPodatek podatki = new AktywnyPodatek(0.82f);
+        podatki.Dodaj(new NowyPodatek("VAT", 0.24f));
+        podatki.Dodaj(new NowyPodatek("ZUS", 0.18f));
+        podatki.Dodaj(new NowyPodatek("B2B", 0.5f));
+
+        // Fluctuating carrot prices will notify subscribing restaurants.
+        podatki.Wysokosc = 0.25f;
+        podatki.Wysokosc = 0.12f;
+        podatki.Wysokosc = 0.35f;
+        podatki.Wysokosc = 0.98f;
+
+        Console.ReadKey();
     }
 }
 
