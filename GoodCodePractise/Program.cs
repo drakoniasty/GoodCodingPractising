@@ -47,7 +47,7 @@ internal partial class Program
         foreach (var item in obiekty_zewnetrzne)
         {
             obiekty.Add(Garnizon.CreateWojownik(item));
-            
+
         }
         foreach (var item in obiekty)
         {
@@ -88,14 +88,14 @@ internal partial class Program
         Console.WriteLine("Zmieniam parametr siła na losowe wartości");
         Console.WriteLine("Tworzę 5 kolejnych orków za pomocą serializacji i prototypu");
         Random random = new Random();
-        for (int i = 0; i < 5; i++) 
+        for (int i = 0; i < 5; i++)
         {
-            
+
             //Console.WriteLine("Krok nr " + i.ToString());
             //Console.WriteLine(prototyp["name"]);
 
             foreach (var item in prototyp.Keys) { Console.WriteLine(item); }
-            prototyp["Strenght"] = random.Next(0,100).ToString();
+            prototyp["Strenght"] = random.Next(0, 100).ToString();
 
             orkowie.Add(new Ork(prototyp["Name"], prototyp["FamilyName"], prototyp["Strenght"], prototyp["Weapon"]));
         }
@@ -124,7 +124,7 @@ internal partial class Program
         Console.WriteLine("Zadanie #7 Adapter");
         WeahterAdapter adapter = new WeahterAdapter("Kraków");
 
-        Dictionary <string, string> pogodawwa = await adapter.RefreshDane();
+        Dictionary<string, string> pogodawwa = await adapter.RefreshDane();
         Console.WriteLine("Ze zmiennej w funkcji głównej");
         Console.WriteLine(pogodawwa);
         foreach (KeyValuePair<string, string> para in pogodawwa)
@@ -140,6 +140,7 @@ internal partial class Program
         //pogodynka.DajPogode();
         //pogodynka.DajPogode();
         // Pompa + baza
+        Console.WriteLine("Zadanie #9 Bridge");
         TerapiaInsulinowa terapia1 =
             new Baza(new PompaInsulinowa());
         terapia1.Podaj();
@@ -148,6 +149,13 @@ internal partial class Program
         TerapiaInsulinowa terapia2 =
             new Bolus(new Strzykawka());
         terapia2.Podaj();
+        Console.WriteLine("Zadanie #13 Strategy");
+        // wybór strategii
+        Kucharz kucharz = new Kucharz(new Smazenie());
+        kucharz.PrzygotujDanie("kurczaka");
+
+        kucharz.ZmienSposobGotowania(new Gotowanie());
+        kucharz.PrzygotujDanie("makaron");
     }
 }
 
