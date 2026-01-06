@@ -1,5 +1,6 @@
 ﻿using GoodCodePractise.Adapter;
 using GoodCodePractise.Bridge;
+using GoodCodePractise.Command;
 using GoodCodePractise.Dekorator;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
@@ -205,7 +206,15 @@ internal partial class Program
 
         Console.WriteLine("Zadanie #12 Command (Polecenie) ");
 
-        
+        var receiver = new PojazdReceiver();
+        var invoker = new PojazdInvoker();
+
+        invoker.DodajKomende(new AutoCommand(receiver, "BMW"));
+        invoker.DodajKomende(new RowerCommand(receiver, "BMX"));
+        invoker.DodajKomende(new SkuterCommand(receiver, "Yamaha"));
+
+        // wykonanie wszystkich komend
+        invoker.WykonajWszystkie();
 
         Console.WriteLine("Zadanie #13 Strategy");
         // wybór strategii
