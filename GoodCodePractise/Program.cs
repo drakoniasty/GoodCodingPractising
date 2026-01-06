@@ -1,5 +1,6 @@
 ﻿using GoodCodePractise.Adapter;
 using GoodCodePractise.Bridge;
+using GoodCodePractise.Composite;
 using GoodCodePractise.Dekorator;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
@@ -173,35 +174,17 @@ internal partial class Program
             Console.WriteLine("Taki użytkownik nie istnieje!");
         }
         Console.WriteLine("Zadanie #10 Kompozyt");
-        List<Pojazd> pojazdy = new List<Pojazd>
-        {
-            new Auto("BMW", 3.5, 200),
-            new Rower("BMX", 0.01, 10),
-            new Skuter("Yamaha", 0.65, 45),
-        };
-        foreach (var item in pojazdy)
-        {
-            item.Opisz();
-        }
-        Console.WriteLine("Zadanie #11 Pyłek");
-        Console.WriteLine("Wybierz jakie pojazdy chcesz utworzyć. Musisz wpisać ciąg odpowiednich znaków, np.: 1231: ");
-        Console.WriteLine("1 - Mercedes GKlasa");
-        Console.WriteLine("2 - Skuter Bianco");
-        Console.WriteLine("3 - Rower BMX");
+        var flotaMiejska = new FlotaPojazdow("Flota miejska");
 
-        string odpowiedz = Console.ReadLine();
-        char[] odpowiedzwchar = odpowiedz.ToCharArray();
+        flotaMiejska.Dodaj(new Auto("BMW"));
+        flotaMiejska.Dodaj(new Rower("BMX"));
 
-        FabrykaPojazdow faktoria = new FabrykaPojazdow();
+        var flotaSerwisowa = new FlotaPojazdow("Flota serwisowa");
+        flotaSerwisowa.Dodaj(new Skuter("Yamaha"));
 
-        int orderTotal = 0;
+        flotaMiejska.Dodaj(flotaSerwisowa);
 
-        //Get the slider from the factory
-        foreach (char c in odpowiedzwchar)
-        {
-            Pojazd pojazd = faktoria.DodajPojazdy(c);
-            pojazd.Opisz();
-        }
+        flotaMiejska.Opisz();
 
         Console.WriteLine("Zadanie #12 Command (Polecenie) ");
         Komander komander = new Komander();

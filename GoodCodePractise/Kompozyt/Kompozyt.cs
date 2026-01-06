@@ -1,58 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GoodCodePractise.Kompozyt
+namespace GoodCodePractise.Composite
 {
+
     public abstract class Pojazd
     {
-        public string Name { get; set; }
-        private int iloscKol = 0;
-        public int IloscKol {
-            get
-            {
-                return iloscKol;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    iloscKol = value;
-                }
-            }
-        }
-        public double Waga { get; set; }
-        public int Vmax { get; set; }
-        public Pojazd(string name, int kola, double waga, int max)
+        protected string Name;
+
+        protected Pojazd(string name)
         {
-            Name=name;
-            IloscKol = kola;
-            Waga = waga;    
-            Vmax = max; 
-            
-        }
-        public void Opisz()
-        {
-            Console.WriteLine("Jest to pojazd " + Name);
-            Console.WriteLine("Posiada "+IloscKol.ToString() + " kół");
-            Console.WriteLine("Waży "+Waga.ToString()+ " gram");
-            Console.WriteLine("Rozpędza się maksymalnie do: "+Vmax.ToString()+" KM/H");
+            Name = name;
         }
 
+        public abstract void Opisz();
     }
+
+
     public class Auto : Pojazd
     {
-        public Auto(string name, double waga, int max) : base(name, 4, waga, max) { }
-    }
-    public class Rower : Pojazd
-    {
-        public Rower(string name, double waga, int max) : base(name, 2, waga, max) { }
-    }
-    public class Skuter : Pojazd
-    {
-        public Skuter(string name, double waga, int max) : base(name, 2, waga, max) { }
+        public Auto(string name) : base(name) { }
+
+        public override void Opisz()
+        {
+            Console.WriteLine("Auto: " + Name);
+        }
     }
 
+    public class Rower : Pojazd
+    {
+        public Rower(string name) : base(name) { }
+
+        public override void Opisz()
+        {
+            Console.WriteLine("Rower: " + Name);
+        }
+    }
+
+
+    public class Skuter : Pojazd
+    {
+        public Skuter(string name) : base(name) { }
+
+        public override void Opisz()
+        {
+            Console.WriteLine("Skuter: " + Name);
+        }
+    }
+
+
+    public class FlotaPojazdow : Pojazd
+    {
+        private List<Pojazd> pojazdy = new();
+
+        public FlotaPojazdow(string name) : base(name) { }
+
+        public void Dodaj(Pojazd pojazd)
+        {
+            pojazdy.Add(pojazd);
+        }
+
+        public void Usun(Pojazd pojazd)
+        {
+            pojazdy.Remove(pojazd);
+        }
+
+        public override void Opisz()
+        {
+            Console.WriteLine("Flota: " + Name);
+            foreach (var pojazd in pojazdy)
+            {
+                pojazd.Opisz(); // REKURENCJA
+            }
+        }
+    }
+
+ 
 }
