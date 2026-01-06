@@ -70,7 +70,7 @@ namespace GoodCodePractise.Composite
             Console.WriteLine("Flota: " + Name);
             foreach (var pojazd in pojazdy)
             {
-                pojazd.Opisz(); // REKURENCJA
+                pojazd.Opisz(); 
             }
         }
     }
