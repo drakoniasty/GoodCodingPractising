@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\konrad\\documents\\github\\goodcodingpractising\\goodcodepractise\\py\u0142ek\\py\u0142ek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\py\u0142ek\\py\u0142ek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\konrad\\documents\\github\\goodcodingpractising\\goodcodepractise\\kompozyt\\kompozyt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\kompozyt\\kompozyt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\konrad\\documents\\github\\goodcodingpractising\\goodcodepractise\\dekorator\\dekorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\dekorator\\dekorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\konrad\\documents\\github\\goodcodingpractising\\goodcodepractise\\kompozyt\\kompozyt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|solutionrelative:goodcodepractise\\kompozyt\\kompozyt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6ED63ABB-C83B-4928-8231-361AA4761C9D}|GoodCodePractise\\GoodCodePractise.csproj|c:\\users\\konrad\\documents\\github\\goodcodingpractising\\goodcodepractise\\fasada\\fasada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 243,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,28 +74,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Kompozyt.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Kompozyt\\Kompozyt.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Kompozyt\\Kompozyt.cs",
               "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Kompozyt\\Kompozyt.cs",
               "RelativeToolTip": "GoodCodePractise\\Kompozyt\\Kompozyt.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAowDYAAAAVAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA6wBoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-06T15:18:37.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Py\u0142ek.cs",
-              "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Py\u0142ek\\Py\u0142ek.cs",
-              "RelativeDocumentMoniker": "GoodCodePractise\\Py\u0142ek\\Py\u0142ek.cs",
-              "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Py\u0142ek\\Py\u0142ek.cs",
-              "RelativeToolTip": "GoodCodePractise\\Py\u0142ek\\Py\u0142ek.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAA3wBIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T15:44:40.875Z",
               "EditorCaption": ""
             },
             {
@@ -117,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Observer.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Observer\\Observer.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Observer\\Observer.cs",
@@ -130,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Strategy.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Strategy\\Strategy.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Strategy\\Strategy.cs",
@@ -143,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Bridge.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Bridge\\Bridge.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Bridge\\Bridge.cs",
@@ -162,7 +145,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Adapter.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Adapter\\Adapter.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Adapter\\Adapter.cs",
@@ -175,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Fasada.cs",
               "DocumentMoniker": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Fasada\\Fasada.cs",
               "RelativeDocumentMoniker": "GoodCodePractise\\Fasada\\Fasada.cs",
@@ -194,7 +177,7 @@
               "RelativeDocumentMoniker": "GoodCodePractise\\Program.cs",
               "ToolTip": "C:\\Users\\Konrad\\Documents\\GitHub\\GoodCodingPractising\\GoodCodePractise\\Program.cs",
               "RelativeToolTip": "GoodCodePractise\\Program.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAADgv6MAAAAIAAAA",
+              "ViewState": "AQIAALUAAAAAAAAAAADgv84AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T19:27:31.791Z",
               "EditorCaption": ""

@@ -203,7 +203,7 @@ internal partial class Program
             pojazd.Opisz();
         }
 
-        Console.ReadKey();
+        Console.WriteLine("Zadanie #12 Command (Polecenie) ");
 
         
 
