@@ -1,5 +1,6 @@
 ﻿using GoodCodePractise.Adapter;
 using GoodCodePractise.Bridge;
+using GoodCodePractise.Dekorator;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
 using GoodCodePractise.Observer;
@@ -141,7 +142,6 @@ internal partial class Program
         //pogodynka.DajPogode();
         //pogodynka.DajPogode();
         // Pompa + baza
-        Console.WriteLine("Zadanie #9 Bridge");
         TerapiaInsulinowa terapia1 =
             new Baza(new PompaInsulinowa());
         terapia1.Podaj();
@@ -150,6 +150,27 @@ internal partial class Program
         TerapiaInsulinowa terapia2 =
             new Bolus(new Strzykawka());
         terapia2.Podaj();
+        Console.WriteLine("Zadanie #9 Dekorator");
+        Console.WriteLine("Podaj imie");
+        User user = new User();
+        user.Name = Console.ReadLine();
+        Console.WriteLine("Podaj nazwisko");
+        user.Surname = Console.ReadLine();
+        Console.WriteLine("Podaj wiek");
+        user.Age = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Podaj wzrost (liczba musi zawierać , <przecinek> a nie . <kropkę>");
+        user.Height = Convert.ToDouble(Console.ReadLine());
+        SprawdzUsera sprawdz = new SprawdzUsera();
+        if (sprawdz.CzyIstnieje(user))
+        {
+            Console.WriteLine("Taki użytkownik istnieje!");
+            Console.WriteLine("Witamy w systemie!");
+        }
+        else
+        {
+            Console.WriteLine("Taki użytkownik nie istnieje!");
+        }
+
         Console.WriteLine("Zadanie #13 Strategy");
         // wybór strategii
         Kucharz kucharz = new Kucharz(new Smazenie());
@@ -171,6 +192,7 @@ internal partial class Program
         podatki.Wysokosc = 0.98f;
 
         Console.ReadKey();
+
     }
 }
 
