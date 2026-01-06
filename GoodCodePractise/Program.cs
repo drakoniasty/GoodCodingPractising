@@ -3,6 +3,7 @@ using GoodCodePractise.Bridge;
 using GoodCodePractise.Dekorator;
 using GoodCodePractise.Faktoria;
 using GoodCodePractise.Fasada;
+using GoodCodePractise.Kompozyt;
 using GoodCodePractise.Observer;
 using GoodCodePractise.Prototyp;
 using GoodCodePractise.Proxy;
@@ -169,6 +170,17 @@ internal partial class Program
         else
         {
             Console.WriteLine("Taki użytkownik nie istnieje!");
+        }
+        Console.WriteLine("Zadanie #10 Kompozyt");
+        List<Pojazd> pojazdy = new List<Pojazd>
+        {
+            new Auto("BMW", 3.5, 200),
+            new Rower("BMX", 0.01, 10),
+            new Skuter("Yamaha", 0.65, 45),
+        };
+        foreach (var item in pojazdy)
+        {
+            item.Opisz();
         }
 
         Console.WriteLine("Zadanie #13 Strategy");
