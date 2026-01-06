@@ -7,6 +7,7 @@ using GoodCodePractise.Kompozyt;
 using GoodCodePractise.Observer;
 using GoodCodePractise.Prototyp;
 using GoodCodePractise.Proxy;
+using GoodCodePractise.Pyłek;
 using GoodCodePractise.Singleton;
 using Newtonsoft.Json;
 using System.Text.Json.Nodes;
@@ -182,6 +183,33 @@ internal partial class Program
         {
             item.Opisz();
         }
+        Console.WriteLine("Zadanie #11 Pyłek");
+        Console.WriteLine("Wybierz jakie pojazdy chcesz utworzyć. Musisz wpisać ciąg odpowiednich znaków, np.: 1231: ");
+        Console.WriteLine("1 - Mercedes GKlasa");
+        Console.WriteLine("2 - Skuter Bianco");
+        Console.WriteLine("3 - Rower BMX");
+
+        string odpowiedz = Console.ReadLine();
+        char[] odpowiedzwchar = odpowiedz.ToCharArray();
+
+        FabrykaPojazdow faktoria = new FabrykaPojazdow();
+
+        int orderTotal = 0;
+
+        //Get the slider from the factory
+        foreach (char c in odpowiedzwchar)
+        {
+            Pojazd pojazd = faktoria.DodajPojazdy(c);
+            pojazd.Opisz();
+        }
+
+        Console.WriteLine("Zadanie #12 Command (Polecenie) ");
+        Komander komander = new Komander();
+        komander.UstawOpcje(1);
+        komander.UstawWartosc(new Pozycja());
+        komander.Wykonaj();
+        komander.PokazMenu();
+        
 
         Console.WriteLine("Zadanie #13 Strategy");
         // wybór strategii
